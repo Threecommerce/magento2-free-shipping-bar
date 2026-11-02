@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.0
+
+- Cart amount chosen in the admin: subtotal after discounts (default) or before cart discounts (coupons and cart
+  price rules ignored), each with or without tax.
+- Reward steps ("gamification"): extra milestones with amount and name on the bar, markers that turn green when
+  reached and a "next reward" message (`{remaining}`, `{threshold}`, `{reward}`). Cart page and mini cart of Luma,
+  Breeze and Hyvä.
+- Bar and step labels checked on mobile: step sizes follow the width of the bar (container queries).
+
 ## 1.1.0
 
 - Luma-based themes and Breeze: bar on the cart page (above items and summary) and in the mini cart

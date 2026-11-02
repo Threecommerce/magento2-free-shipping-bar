@@ -11,11 +11,13 @@ A **progress bar towards free shipping** for Magento 2 and Mage-OS: it shows how
 
 - **Cart page**: full-width bar above items and summary, rendered server side on every theme and refreshed on every cart update (quantity, remove, coupon).
 - **Mini cart**: reads a `tc_free_shipping` key added to the `cart` customer section, so it works with full page cache and updates live when a product is added, changed or removed.
-- **Amount** = discounted subtotal of the shipping address (tax included or excluded): the same formula Magento uses for the Free Shipping method, so coupons and cart price rules are included and shipping costs are not.
+- **Amount** chosen in the admin: the subtotal of the shipping address **after discounts** (the same formula Magento uses for the Free Shipping method, so coupons and cart price rules are subtracted) or **before cart discounts** (coupons and cart price rules ignored), each with tax included or excluded. Shipping costs are never counted.
+- **Reward steps (gamification)**: optional extra milestones on the bar besides free shipping, e.g. a free sample at 30 and a discount on the next order at 90. Every milestone has a marker that turns green when reached, and the message points at the next one with its own text (`{remaining}`, `{threshold}`, `{reward}`). Works in the cart page and in the mini cart.
 - **Threshold**: a custom amount with **per-country overrides** (empty amount = no bar for that country), or read from the Magento *Free Shipping* method (minimum amount, tax, specific countries) so the bar always matches it.
 - Optional: a cart price rule that grants free shipping marks the goal as reached.
-- **Messages** per store view with the `{remaining}` and `{threshold}` placeholders and limited HTML; English and Italian texts included.
+- **Messages** per store view with the `{remaining}`, `{threshold}` and `{reward}` placeholders and limited HTML; English and Italian texts included.
 - **Colors** from the admin or with the `--tc-fsb-color` and `--tc-fsb-reached` CSS variables; plain CSS, no extra libraries.
+- Mobile first: the step labels adapt to the width of the bar, so they stay readable on phones and in the narrow mini cart.
 - Hyvä (Alpine), Luma and Breeze (Knockout) supported with no Hyvä dependency required.
 
 ![The same bar in the mini cart drawer](images/free-shipping-bar-minicart.png)
@@ -44,7 +46,7 @@ bin/magento cache:flush
 
 ## Configuration
 
-Admin → **Stores → Configuration → Threecommerce Plugins → Free Shipping Bar**: enable, show in mini cart, threshold source (custom or Free Shipping method), default threshold and per-country overrides, tax basis, messages per store view and colors. The module only displays the progress: free shipping must be granted by a shipping method or cart price rule with the same threshold.
+Admin → **Stores → Configuration → Threecommerce Plugins → Free Shipping Bar**: enable, show in mini cart, threshold source (custom or Free Shipping method), default threshold and per-country overrides, cart amount (after or before cart discounts, with or without tax), reward steps, messages per store view and colors. The module only displays the progress: free shipping must be granted by a shipping method or cart price rule with the same threshold.
 
 ## Documentation and support
 
