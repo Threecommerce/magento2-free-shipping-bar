@@ -10,14 +10,14 @@ A **progress bar towards free shipping** for Magento 2 and Mage-OS: it shows how
 ## Features
 
 - **Cart page**: full-width bar above items and summary, rendered server side on every theme and refreshed on every cart update (quantity, remove, coupon).
-- **Mini cart**: reads a `tc_free_shipping` key added to the `cart` customer section, so it works with full page cache and updates live when a product is added, changed or removed.
+- **Mini cart**: reads a `tc_free_shipping` key added to the `cart` customer section, so it works with full page cache and updates live when a product is added, changed or removed. The bar sits at the top of the panel and is slim, so it does not push the products down.
 - **Amount** chosen in the admin: the subtotal of the shipping address **after discounts** (the same formula Magento uses for the Free Shipping method, so coupons and cart price rules are subtracted) or **before cart discounts** (coupons and cart price rules ignored), each with tax included or excluded. Shipping costs are never counted.
 - **Reward steps (gamification)**: optional extra milestones on the bar besides free shipping, e.g. a free sample at 30 and a discount on the next order at 90. Every milestone has a marker that turns green when reached, and the message points at the next one with its own text (`{remaining}`, `{threshold}`, `{reward}`). Works in the cart page and in the mini cart.
 - **Threshold**: a custom amount with **per-country overrides** (empty amount = no bar for that country), or read from the Magento *Free Shipping* method (minimum amount, tax, specific countries) so the bar always matches it.
 - Optional: a cart price rule that grants free shipping marks the goal as reached.
 - **Messages** per store view with the `{remaining}`, `{threshold}` and `{reward}` placeholders and limited HTML; English and Italian texts included.
 - **Colors** from the admin or with the `--tc-fsb-color` and `--tc-fsb-reached` CSS variables; plain CSS, no extra libraries.
-- Mobile first: the step labels adapt to the width of the bar, so they stay readable on phones and in the narrow mini cart.
+- Mobile first: the step labels adapt to the width of the bar, so they stay readable on phones. In the mini cart only the step dots are shown.
 - Hyvä (Alpine), Luma and Breeze (Knockout) supported with no Hyvä dependency required.
 
 ![The same bar in the mini cart drawer](images/free-shipping-bar-minicart.png)

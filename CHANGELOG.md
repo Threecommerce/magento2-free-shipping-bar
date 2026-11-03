@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1
+
+- Mini cart (Luma / Breeze): the bar is now the first element of the panel and slim (one line of text, 4 px bar,
+  reward steps shown as dots only), instead of a tall box below the subtotal that pushed the products down.
+- Fixed the mini cart bar growing to about 150 px in themes whose panel is a wrapping column flex container.
+
 ## 1.2.0
 
 - Cart amount chosen in the admin: subtotal after discounts (default) or before cart discounts (coupons and cart
