@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.2
+
+- Licence declared in `composer.json` is now `proprietary` (it was MIT), aligned with the other Threecommerce modules. No code changes.
+
 ## 1.2.1
 
 - Mini cart (Luma / Breeze): the bar is now the first element of the panel and slim (one line of text, 4 px bar,
