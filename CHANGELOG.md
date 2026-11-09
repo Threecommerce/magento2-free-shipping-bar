@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.0
+
+- New admin option **Threshold > Exclude Virtual Products** (custom threshold only, default No): virtual products such
+  as gift cards are left out of the cart amount, to match shipping methods that ignore virtual items (e.g. Amasty
+  Table Rates "Ignore virtual products").
+
 ## 1.2.2
 
 - Licence declared in `composer.json` is now `proprietary` (it was MIT), aligned with the other Threecommerce modules. No code changes.
