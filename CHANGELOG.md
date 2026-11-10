@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.0
+
+- Luma / Breeze: on the cart page the bar is now in the summary column, after the order total and before the coupon
+  section (it was full width above items and summary). Hyvä is unchanged.
+
 ## 1.3.0
 
 - New admin option **Threshold > Exclude Virtual Products** (custom threshold only, default No): virtual products such
