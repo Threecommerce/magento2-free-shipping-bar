@@ -9,9 +9,9 @@ A **progress bar towards free shipping** for Magento 2 and Mage-OS: it shows how
 
 ## Features
 
-- **Cart page**: full-width bar above items and summary, rendered server side on every theme and refreshed on every cart update (quantity, remove, coupon).
+- **Cart page**: on Hyvä a full-width bar above items and summary, on Luma and Breeze in the summary column after the order total; rendered server side on every theme and refreshed on every cart update (quantity, remove, coupon).
 - **Mini cart**: reads a `tc_free_shipping` key added to the `cart` customer section, so it works with full page cache and updates live when a product is added, changed or removed. The bar sits at the top of the panel and is slim, so it does not push the products down.
-- **Amount** chosen in the admin: the subtotal of the shipping address **after discounts** (the same formula Magento uses for the Free Shipping method, so coupons and cart price rules are subtracted) or **before cart discounts** (coupons and cart price rules ignored), each with tax included or excluded. Shipping costs are never counted.
+- **Amount** chosen in the admin: the subtotal of the shipping address **after discounts** (the same formula Magento uses for the Free Shipping method, so coupons and cart price rules are subtracted) or **before cart discounts** (coupons and cart price rules ignored), each with tax included or excluded. Shipping costs are never counted, and virtual products (e.g. gift cards) can be left out to match shipping methods that ignore them.
 - **Reward steps (gamification)**: optional extra milestones on the bar besides free shipping, e.g. a free sample at 30 and a discount on the next order at 90. Every milestone has a marker that turns green when reached, and the message points at the next one with its own text (`{remaining}`, `{threshold}`, `{reward}`). Works in the cart page and in the mini cart.
 - **Threshold**: a custom amount with **per-country overrides** (empty amount = no bar for that country), or read from the Magento *Free Shipping* method (minimum amount, tax, specific countries) so the bar always matches it.
 - Optional: a cart price rule that grants free shipping marks the goal as reached.
@@ -22,7 +22,9 @@ A **progress bar towards free shipping** for Magento 2 and Mage-OS: it shows how
 
 ![The same bar in the mini cart drawer](images/free-shipping-bar-minicart.png)
 
-![Cart page once the free shipping threshold is reached](images/free-shipping-bar-reached.png)
+![Cart page with free shipping reached and the next reward step still to unlock](images/free-shipping-bar-reached.png)
+
+![Reward steps configuration: a free gift at 120 besides free shipping](images/free-shipping-bar-steps.png)
 
 ![Free Shipping Bar configuration in the Magento admin](images/free-shipping-bar-config.png)
 
@@ -46,7 +48,7 @@ bin/magento cache:flush
 
 ## Configuration
 
-Admin → **Stores → Configuration → Threecommerce Plugins → Free Shipping Bar**: enable, show in mini cart, threshold source (custom or Free Shipping method), default threshold and per-country overrides, cart amount (after or before cart discounts, with or without tax), reward steps, messages per store view and colors. The module only displays the progress: free shipping must be granted by a shipping method or cart price rule with the same threshold.
+Admin → **Stores → Configuration → Threecommerce Plugins → Free Shipping Bar**: enable, show in mini cart, threshold source (custom or Free Shipping method), default threshold and per-country overrides, cart amount (after or before cart discounts, with or without tax), exclude virtual products, reward steps, messages per store view and colors. The module only displays the progress: free shipping must be granted by a shipping method or cart price rule with the same threshold.
 
 ## Documentation and support
 
