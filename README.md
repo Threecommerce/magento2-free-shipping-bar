@@ -4,7 +4,7 @@ A **progress bar towards free shipping** for Magento 2 and Mage-OS: it shows how
 
 ![Cart page with a progress bar showing the amount still missing for free shipping](images/free-shipping-bar-cart.png)
 
-**Compatibility:** Magento Open Source / Adobe Commerce 2.4.4 – 2.4.9 · Mage-OS 1.x / 3.x · PHP 8.1 – 8.4 · Themes: Luma, Hyvä, Breeze
+**Compatibility:** Magento Open Source / Adobe Commerce 2.4.4 – 2.4.9 · Mage-OS 1.x / 3.x · PHP 8.1 – 8.5 · Themes: Luma, Hyvä, Breeze
 **License:** commercial · **Current version:** see [Releases](../../releases)
 
 ## Features
@@ -31,7 +31,7 @@ A **progress bar towards free shipping** for Magento 2 and Mage-OS: it shows how
 ## Requirements
 
 - Magento Open Source / Adobe Commerce 2.4.4+ or Mage-OS
-- PHP 8.1 – 8.4
+- PHP 8.1 – 8.5
 - Package: `threecommerce/m2-base` (installed automatically by Composer)
 
 ## Installation
